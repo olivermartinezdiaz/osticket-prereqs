@@ -6,10 +6,6 @@
 This tutorial outlines the prerequisites and installation of the open-source help desk ticketing system osTicket.<br />
 
 
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: How To Install osTicket with Prerequisites](https://www.youtube.com)
-
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
@@ -22,34 +18,142 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>List of Prerequisites</h2>
 
-- Item 1
-- Item 2
-- Item 3
-- Item 4
-- Item 5
+- Internet Information Services (IIS)
+- MySQL 5.5
+- Add All Simple Versions of x86 PHP Up To v7.3
+- Install osTicket v1.15.8
+- Reload iis (Open IIS, Stop and Start The Server
+- Enable Extensions In iis
+- osTicket Refresh On Browser
+- File Clean Up For Optimal Use
 
 <h2>Installation Steps</h2>
 
+<h2> Adding Internet Information Services
+
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+<img src="https://i.imgur.com/C4u4X0U.png" alt="osTicket logo"/>
+
+
+>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+STEP 1: Install Or Enable Internet Information Services In The Control Panel.
+<img src="https://i.imgur.com/cpltf0k.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/6JYTGl6.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/AIj4xty.png" alt="osTicket logo"/>
+
+  <h2> Put 127.0.0.1 into the browser to verify steps were inputted correctly 
+<img src="https://i.imgur.com/aMVPvn9.png" alt="osTicket logo"/>
+
+STEP 2: Download and install files
+
+PHP Manager for IIS
+<img src="https://i.imgur.com/nHP8nK7.png" alt="osTicket logo"/>
+
+Rewrite Module 
+<img src="https://i.imgur.com/PpZ5gxK.png" alt="osTicket logo"/>
+
+PHP 7.3.8
+<img src="https://i.imgur.com/7M3A5lQ.png" alt="osTicket logo"/>
+
+VC_redist.xe86.exe
+<img src="https://i.imgur.com/iBqE8hH.png" alt="osTicket logo"/>
+
+MySQL 5.5.62.
+Typical Setup ->
+Launch Configuration Wizard (after install) ->
+Standard Configuration -> Create a username and password you will need this to install Osticket.
+<img src="https://i.imgur.com/PKBaRFr.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/ZJHuuGe.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/lLWuL1V.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/D88RE1p.png" alt="osTicket logo"/>
+
+Step 3: Open IIS as an Admin, Register PHP from within IIS,
+Reload IIS (Open IIS, Stop and Start the server)
+<img src="https://i.imgur.com/P7DwYWt.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/zJGN1HI.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/gA0rqo0.png" alt="osTicket logo"/>
+>
+</p>
+<p>
+
 </p>
 <br />
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<h2> Step 4:Install osTicket v1.15.8
+Download osTicket from the Installation Files Folder
+Extract and copy “Upload” folder to c:\inetpub\wwwroot
+Within c:\inetpub\wwwroot, Rename “upload” to “osTicket”
+</p>
+<img src="https://i.imgur.com/kXUj3qp.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/6KCXTw7.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/YR9VRQX.png" alt="osTicket logo"/>
+</p>
+
+<h2>Step 5:Go to sites -> Default -> osTicket
+On the right, click “Browse *:80” If steps were followed correctly the OSticket installer screen should open
+<img src="https://i.imgur.com/x8Eh4Ew.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/qd9DKfT.png" alt="osTicket logo"/>
+
+
+>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Step 6:Note that some extensions are not enabled
+Go back to IIS, sites -> Default -> osTicket
+Double-click PHP Manager
+Click “Enable or disable an extension”
+Enable: php_imap.dll
+Enable: php_intl.dll
+Enable: php_opcache.dll
+Refresh the osTicket site in your browse, observe the changes
 </p>
-<br />
+<img src="https://i.imgur.com/FqeoKkf.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/iwC3lr0.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/wxAr9YI.png" alt="osTicket logo"/>
+</p>
+Step 7: Rename: ost-config.php
+From: C:\inetpub\wwwroot\osTicket\include\ost-sampleconfig.php
+To: C:\inetpub\wwwroot\osTicket\include\ost-config.php
+<img src="https://i.imgur.com/aQQJnc4.png" alt="osTicket logo"/>
+
+
+Step 8: Assign Permissions: ost-config.php
+Disable inheritance -> Remove All
+New Permissions -> Everyone -> All
+<img src="https://i.imgur.com/WIDPueB.png" alt="osTicket logo"/>
+>
+</p>
+<p>
+Step 9:Continue Setting up osTicket in the browser (click Continue)
+Name Helpdesk
+Default email (receives email from customers)
+From the Installation Files, download and install HeidiSQL.
+Open Heidi SQL
+Create a new session, root/Password1
+Connect to the session
+Create a database called “osTicket”
+Continue Setting up osticket in the browser
+MySQL Database: osTicket
+MySQL Username: root
+MySQL Password: Password1
+Click “Install Now!”
+<img src="https://i.imgur.com/5ZksyTn.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/b25YDie.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/KjwNt4n.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/dxaZUfh.png" alt="osTicket logo"/>
+<img src="https://i.imgur.com/DPRPIyB.png" alt="osTicket logo"/>
+>
+</p>
+<p>
+Step10:Congratulations, hopefully it is installed with no errors!
+Browse to your help desk login page: http://localhost/osTicket/scp/login.php
+<img src="https://i.imgur.com/fDxNQDr.png" alt="osTicket logo"/>
+
+<h2> Cleaning Up Files
+Delete: C:\inetpub\wwwroot\osTicket\setup
+Set Permissions to “Read” only: C:\inetpub\wwwroot\osTicket\include\ost-config.php
+<img src="https://i.imgur.com/25lIoCR.png" alt="osTicket logo"/>
