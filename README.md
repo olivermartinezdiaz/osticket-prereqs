@@ -47,7 +47,9 @@ STEP 1: Install Or Enable Internet Information Services In The Control Panel.
   <h2> Put 127.0.0.1 into the browser to verify steps were inputted correctly 
 <img src="https://i.imgur.com/aMVPvn9.png" alt="osTicket logo"/>
 
-STEP 2: Download and install files
+STEP 2: Download and install files 
+(Note all of these files are required to download OSTicket)
+
 
 PHP Manager for IIS
 <img src="https://i.imgur.com/nHP8nK7.png" alt="osTicket logo"/>
@@ -146,10 +148,9 @@ Click “Install Now!”
 <img src="https://i.imgur.com/KjwNt4n.png" alt="osTicket logo"/>
 <img src="https://i.imgur.com/dxaZUfh.png" alt="osTicket logo"/>
 <img src="https://i.imgur.com/DPRPIyB.png" alt="osTicket logo"/>
->
 </p>
-<p>
-Step10:Congratulations, hopefully it is installed with no errors!
+
+  Step10:Congratulations, hopefully it is installed with no errors!
 Browse to your help desk login page: http://localhost/osTicket/scp/login.php
 <img src="https://i.imgur.com/fDxNQDr.png" alt="osTicket logo"/>
 
